@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Converter</title>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <form>
+        <label for="value">Value to convert:</label>
+        <input type="number" id="value"><br><br>
+        <button type="button" onclick="convertcmtom()">cm → m</button>
+        <button type="button" onclick="convertmtocm()">m → cm</button>
+        <button type="button" onclick="convertmtokm()">m → km</button>
+        <button type="button" onclick="convertkmtom()">km → m</button>
+    </form>
+    <h3 id="result" style="margin-top: 20px;"></h3>
+    <script>
+        function convertcmtom(){
+            var a = parseFloat(document.getElementById("value").value);
+            if (isNaN(a)) {
+                alert("Please enter a valid number");
+                return;
+            }
+            var result = a / 100;
+            var fromUnit = "cm";
+            var toUnit = "m";
+            document.getElementById("result").innerHTML =  a + " " + fromUnit + " = " + result + " " + toUnit;
+        }
+        function convertmtocm(){
+            var a = parseFloat(document.getElementById("value").value);
+            if (isNaN(a)) {
+                alert("Please enter a valid number");
+                return;
+            }
+            var result = a * 100;
+            var fromUnit = "m";
+            var toUnit = "cm";
+            document.getElementById("result").innerHTML =  a + " " + fromUnit + " = " + result + " " + toUnit;
+        }
+        function convertmtokm(){
+            var a = parseFloat(document.getElementById("value").value);
+            if (isNaN(a)) {
+                alert("Please enter a valid number");
+                return;
+            }
+            var result = a / 1000;
+            var fromUnit = "m";
+            var toUnit = "km";
+            document.getElementById("result").innerHTML =  a + " " + fromUnit + " = " + result + " " + toUnit;
+        }
+        function convertkmtom(){
+            var a = parseFloat(document.getElementById("value").value);
+            if (isNaN(a)) {
+                alert("Please enter a valid number");
+                return;
+            }
+            var result = a * 1000;
+            var fromUnit = "km";
+            var toUnit = "m";
+            document.getElementById("result").innerHTML =  a + " " + fromUnit + " = " + result + " " + toUnit;
+        }
+    </script>
+</body>
+</html>

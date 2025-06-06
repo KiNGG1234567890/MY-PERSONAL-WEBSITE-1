@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Calculator Program</title>
+    </head>
+    <body>
+        <h1>SImple Calculator</h1>
+        <p>Please enter numbers and choose one of the operation:</p>
+        <input type="number" id="num1"><br><br>
+        <input type="number" id="num2"><br><br>
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+        <button onclick="clear()">Clear</button><br><br>
+        <p id="result"></p>
+        <script>
+            function add(){
+                var a = Number(document.getElementById("num1").value);
+                var b = Number(document.getElementById("num2").value);
+                document.getElementById("result").innerHTML = (a + b);
+            }
+            function subtract(){
+                var a = Number(document.getElementById("num1").value);
+                var b = Number(document.getElementById("num2").value);
+                document.getElementById("result").innerHTML = (a - b);
+            }
+            function multiply(){
+                var a = Number(document.getElementById("num1").value);
+                var b = Number(document.getElementById("num2").value);
+                document.getElementById("result").innerHTML = (a * b);
+            }
+            function divide(){
+                var a = Number(document.getElementById("num1").value);
+                var b = Number(document.getElementById("num2").value);
+                if(b == 0){
+                    document.getElementById("result").innerHTML = "Cannot divide by 0";
+                }else{
+                    document.getElementById("result").innerHTML = (a / b);
+                }
+            }
+            function clear(){
+                document.getElementById("num1").value = "";
+                document.getElementById("num2").value = "";
+                document.getElementById("calcOutput").innerHTML = "";
+            }
+        </script>
+    </body>
+</html>
